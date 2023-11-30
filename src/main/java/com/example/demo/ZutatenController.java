@@ -3,10 +3,7 @@ package com.example.demo;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,5 +24,13 @@ public class ZutatenController {
     public List<Zutaten> getAllZutaten(){
         return service.getAll();
     }
+
+    @GetMapping("/zutaten/{id}")
+    public Zutaten getZutaten(@PathVariable String id) {
+        logger.info("GET request on route zutaten with {}", id);
+        Long zutatId = Long.parseLong(id);
+        return service.get(zutatId);
+    }
+
 
 }
