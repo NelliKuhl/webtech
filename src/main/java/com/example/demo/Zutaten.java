@@ -80,6 +80,7 @@ public class Zutaten {
                 "id=" + id +
                 ", zutat='" + zutat + '\'' +
                 ", menge=" + menge +
+                ", einheit='" + einheit + '\'' +
                 '}';
     }
 }
