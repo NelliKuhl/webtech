@@ -15,16 +15,19 @@ public class ZutatenController {
 
     Logger logger = LoggerFactory.getLogger(ZutatenController.class);
 
+    @CrossOrigin
     @PostMapping("/zutaten")
     public Zutaten createZutat(@RequestBody Zutaten zutaten){
         return service.save(zutaten);
     }
 
+    @CrossOrigin
     @GetMapping("/zutaten")
     public List<Zutaten> getAllZutaten(){
         return service.getAll();
     }
 
+    @CrossOrigin
     @GetMapping("/zutaten/{id}")
     public Zutaten getZutaten(@PathVariable String id) {
         logger.info("GET request on route zutaten with {}", id);

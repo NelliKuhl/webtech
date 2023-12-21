@@ -9,5 +9,4 @@ class WebtechEinkaufslisteApplicationTests {
 	//@Test
 	//void contextLoads() {
 	//}
-
 }
