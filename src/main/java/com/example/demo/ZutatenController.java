@@ -34,6 +34,12 @@ public class ZutatenController {
         Long zutatId = Long.parseLong(id);
         return service.get(zutatId);
     }
+    @CrossOrigin
+    @DeleteMapping("/zutaten/{id}")
+    public void deleteZutat(@PathVariable Long id){
+        service.delete(id);
+    }
+
 
 
 }

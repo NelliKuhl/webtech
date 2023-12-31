@@ -15,7 +15,9 @@ public class ZutatenService {
     public Zutaten save(Zutaten zutaten){
         return repo.save(zutaten);
     }
-
+    public void delete(Long id){
+        repo.deleteById(id);
+    }
     public Zutaten get (Long id){
         return repo.findById(id).orElseThrow(() -> new RuntimeException());
     }
