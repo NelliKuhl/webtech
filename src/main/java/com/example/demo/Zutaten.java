@@ -77,10 +77,10 @@ public class Zutaten {
     @Override
     public String toString() {
         return "Zutat{" +
-                "id=" + id +
-                ", zutat='" + zutat + '\'' +
-                ", menge=" + menge +
-                ", einheit='" + einheit + '\'' +
+                "ID=" + id +
+                ", Zutat='" + zutat + '\'' +
+                ", Menge=" + menge +
+                ", Einheit='" + einheit + '\'' +
                 '}';
     }
 }
