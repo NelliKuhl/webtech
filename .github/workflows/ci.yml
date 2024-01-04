@@ -13,5 +13,5 @@ jobs:
         java-version: 20.0.2
         distribution: 'adopt'
     - name: clean and build
-      run: ./gradlew clean test --info --stacktrace
+      run: chmod +x ./gradlew && ./gradlew clean test --info --stacktrace
 
