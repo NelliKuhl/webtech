@@ -23,8 +23,8 @@ public class ZutatenController {
 
     @CrossOrigin
     @GetMapping("/zutaten")
-    public List<Zutaten> getAllZutaten(){
-        return service.getAll();
+    public List<Zutaten> getAllZutaten(@RequestParam("owner") String owner){
+        return owner.equals("") ? service.getAllWithoutOwner() : service.getAllOwnedBy(owner);
     }
 
     @CrossOrigin

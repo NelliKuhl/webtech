@@ -14,20 +14,23 @@ public class Zutaten {
     private String zutat;
     private int menge;
     private String einheit;
+    private String owner;
 
     public Zutaten(){}
 
     //Konstruktor
-    public Zutaten( String zutat, int menge, String einheit){
+    public Zutaten( String zutat, int menge, String einheit, String owner){
         this.zutat = zutat;
         this.menge = menge;
         this.einheit = einheit;
+        this.owner = owner;
     }
 
     //getter und setter
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -53,6 +56,8 @@ public class Zutaten {
         this.einheit = einheit;
     }
 
+    public String getOwner() {return owner;}
+    public void setOwner(String owner) {this.owner = owner;}
 
     @Override
     public boolean equals(Object o) {

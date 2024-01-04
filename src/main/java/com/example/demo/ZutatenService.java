@@ -22,10 +22,17 @@ public class ZutatenService {
         return repo.findById(id).orElseThrow(() -> new RuntimeException());
     }
 
-    public List<Zutaten> getAll(){
+    public List<Zutaten> getAllWithoutOwner() {
         Iterable<Zutaten> iterator = repo.findAll();
-        List<Zutaten> zutatenListe = new ArrayList<>();
-        for(Zutaten z: iterator) zutatenListe.add(z);
-        return zutatenListe;
+        List<Zutaten> zutaten = new ArrayList<Zutaten>();
+        for (Zutaten zutat : iterator) if(zutat.getOwner()==null) zutaten.add(zutat);
+        return zutaten;
+    }
+
+    public List<Zutaten> getAllOwnedBy(String owner) {
+        Iterable<Zutaten> iterator = repo.findAll();
+        List<Zutaten> zutaten = new ArrayList<Zutaten>();
+        for (Zutaten zutat : iterator) if(zutat.getOwner()!=null && zutat.getOwner().equals(owner)) zutaten.add(zutat);
+        return zutaten;
     }
 }

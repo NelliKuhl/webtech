@@ -26,7 +26,7 @@ public class ZutatenControllerTest {
     @Test
     public void testGetRoute() throws Exception {
         //Test Daten und Service Mock
-        Zutaten apfel = new Zutaten("Apfel", 2, "kg");
+        Zutaten apfel = new Zutaten("Apfel", 2, "kg", "Marie");
         apfel.setId(99L);
         when(service.get(99L)).thenReturn(apfel);
 

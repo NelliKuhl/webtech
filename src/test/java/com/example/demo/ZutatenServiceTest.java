@@ -23,8 +23,8 @@ public class ZutatenServiceTest {
     @Test
     @DisplayName("Sollte Zutat mit Hilfe der ID finden")
     void testGet() {
-        var z1 = new Zutaten("Pfeffer", 99, "Gramm");
-        var z2 = new Zutaten("Mehl", 199, "Gramm");
+        var z1 = new Zutaten("Pfeffer", 99, "Gramm", "Marie");
+        var z2 = new Zutaten("Mehl", 199, "Gramm", "Nelli");
         doReturn(Optional.of(z1)).when(repository).findById(42L);
         doReturn(Optional.of(z2)).when(repository).findById(43L);
 
