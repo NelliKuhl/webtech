@@ -31,7 +31,7 @@ public class ZutatenControllerTest {
         when(service.get(99L)).thenReturn(apfel);
 
         //Erwartetes Ergebnis
-        String expected = "{\"id\":99,\"zutat\":\"Apfel\",\"menge\":2,\"einheit\":\"kg\"}";
+        String expected = "{\"id\":99,\"zutat\":\"Apfel\",\"menge\":2,\"einheit\":\"kg\",\"owner\":\"Marie\"}";
 
         //Aufruf und Vergleich
         this.mockMvc.perform(get("/zutaten/99"))
