@@ -38,26 +38,16 @@ public class Zutaten {
     public String getZutat() {
         return zutat;
     }
-    public void setZutat(String name) {
-        this.zutat = name;
-    }
 
     public int getMenge() {
         return menge;
-    }
-    public void setMenge(int menge) {
-        this.menge = menge;
     }
 
     public String getEinheit() {
         return einheit;
     }
-    public void setEinheit(String einheit) {
-        this.einheit = einheit;
-    }
 
     public String getOwner() {return owner;}
-    public void setOwner(String owner) {this.owner = owner;}
 
     @Override
     public boolean equals(Object o) {

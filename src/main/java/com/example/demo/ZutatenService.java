@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class ZutatenService {
@@ -25,7 +26,7 @@ public class ZutatenService {
     public List<Zutaten> getAllWithoutOwner() {
         Iterable<Zutaten> iterator = repo.findAll();
         List<Zutaten> zutaten = new ArrayList<Zutaten>();
-        for (Zutaten zutat : iterator) if(zutat.getOwner()==null) zutaten.add(zutat);
+        for (Zutaten zutat : iterator) if(Objects.equals(zutat.getOwner(), "")) zutaten.add(zutat);
         return zutaten;
     }
 
