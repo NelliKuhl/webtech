@@ -1,5 +1,8 @@
 package com.example.demo;
 
+import com.example.demo.ZutatenPacket.Zutaten;
+import com.example.demo.ZutatenPacket.ZutatenController;
+import com.example.demo.ZutatenPacket.ZutatenService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;

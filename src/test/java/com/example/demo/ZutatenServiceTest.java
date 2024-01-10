@@ -1,5 +1,8 @@
 package com.example.demo;
 
+import com.example.demo.ZutatenPacket.Zutaten;
+import com.example.demo.ZutatenPacket.ZutatenRepository;
+import com.example.demo.ZutatenPacket.ZutatenService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
