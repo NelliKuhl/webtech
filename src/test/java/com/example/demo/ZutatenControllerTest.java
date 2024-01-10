@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.example.demo.ListenPacket.Listen;
+import com.example.demo.ListenPacket.ListenService;
 import com.example.demo.ZutatenPacket.Zutaten;
 import com.example.demo.ZutatenPacket.ZutatenController;
 import com.example.demo.ZutatenPacket.ZutatenService;
@@ -25,21 +27,28 @@ public class ZutatenControllerTest {
     @MockBean
     private ZutatenService service;
 
+    @MockBean
+    private ListenService listenService;
+
     //geht nicht mit stÜck
     @Test
     public void testGetRoute() throws Exception {
-        //Test Daten und Service Mock
+        // Testdaten und Service Mock
+        Listen liste = new Listen("Einkaufsliste", "");
+        liste.setId(1L); // Setzen Sie die ID für die Liste
         Zutaten apfel = new Zutaten("Apfel", 2, "kg");
         apfel.setId(99L);
+        apfel.setListen(liste);
         when(service.get(99L)).thenReturn(apfel);
 
-        //Erwartetes Ergebnis
-        String expected = "{\"id\":99,\"zutat\":\"Apfel\",\"menge\":2,\"einheit\":\"kg\"}";
+        // Erwartetes Ergebnis
+        String expected = "{\"id\":99,\"zutat\":\"Apfel\",\"menge\":2,\"einheit\":\"kg\",\"listen\":{\"id\":1,\"name\":\"Einkaufsliste\",\"owner\":\"\"}}";
 
-        //Aufruf und Vergleich
+
+        // Aufruf und Vergleich
         this.mockMvc.perform(get("/zutaten/99"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(content().string(containsString(expected)));
+                .andExpect(content().json(expected));
     }
 }
