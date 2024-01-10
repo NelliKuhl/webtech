@@ -29,12 +29,12 @@ public class ZutatenControllerTest {
     @Test
     public void testGetRoute() throws Exception {
         //Test Daten und Service Mock
-        Zutaten apfel = new Zutaten("Apfel", 2, "kg", "Marie");
+        Zutaten apfel = new Zutaten("Apfel", 2, "kg");
         apfel.setId(99L);
         when(service.get(99L)).thenReturn(apfel);
 
         //Erwartetes Ergebnis
-        String expected = "{\"id\":99,\"zutat\":\"Apfel\",\"menge\":2,\"einheit\":\"kg\",\"owner\":\"Marie\"}";
+        String expected = "{\"id\":99,\"zutat\":\"Apfel\",\"menge\":2,\"einheit\":\"kg\"}";
 
         //Aufruf und Vergleich
         this.mockMvc.perform(get("/zutaten/99"))

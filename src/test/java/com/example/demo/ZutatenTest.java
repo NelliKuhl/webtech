@@ -12,7 +12,7 @@ public class ZutatenTest {
     void testToString(){
 
         //Objekt erstellen
-        Zutaten apfel = new Zutaten("Apfel", 2, "Stück", "Nelli");
+        Zutaten apfel = new Zutaten("Apfel", 2, "Stück");
         apfel.setId(99L);
 
         //erwartetes Ergebnis
