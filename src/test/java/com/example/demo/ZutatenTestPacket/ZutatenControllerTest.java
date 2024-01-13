@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.ZutatenTestPacket;
 
 import com.example.demo.ListenPacket.Listen;
 import com.example.demo.ListenPacket.ListenService;
@@ -12,7 +12,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.hamcrest.Matchers.containsString;
+
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -30,7 +30,7 @@ public class ZutatenControllerTest {
     @MockBean
     private ListenService listenService;
 
-    //geht nicht mit stÜck
+
     @Test
     public void testGetRoute() throws Exception {
         // Testdaten und Service Mock
@@ -51,4 +51,5 @@ public class ZutatenControllerTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().json(expected));
     }
+
 }

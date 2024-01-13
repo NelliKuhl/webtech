@@ -81,8 +81,8 @@ public class Listen {
     @Override
     public String toString() {
         return "Listen{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "ID=" + id +
+                ", Name='" + name + '\'' +
                 '}';
     }
 }

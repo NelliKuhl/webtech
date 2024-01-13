@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.ZutatenTestPacket;
 
 import com.example.demo.ZutatenPacket.Zutaten;
 import org.junit.jupiter.api.Test;
@@ -13,10 +13,10 @@ public class ZutatenTest {
 
         //Objekt erstellen
         Zutaten apfel = new Zutaten("Apfel", 2, "Stück");
-        apfel.setId(99L);
+        apfel.setId(1L);
 
         //erwartetes Ergebnis
-        String expected= "Zutat{ID=99, Zutat='Apfel', Menge=2, Einheit='Stück'}";
+        String expected= "Zutat{ID=1, Zutat='Apfel', Menge=2, Einheit='Stück'}";
 
         //tatsächliches Ergebnis
         String actual= apfel.toString();
